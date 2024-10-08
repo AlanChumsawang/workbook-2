@@ -104,24 +104,26 @@ public class Library {
                     break;
                 case 2:
                     showUnavailableBooks();
-                    for (Book book : libraryInventory) {
-                        System.out.println("""
-                                1: Check in a book
-                                2: Return to home screen
-                                """);
-                        int userInput3 = inputscanner.nextInt();
-                        inputscanner.nextLine();
+                    System.out.println("""
+            1: Check in a book
+            2: Return to home screen
+            """);
+                    int userInput3 = inputscanner.nextInt();
+                    inputscanner.nextLine();
 
-                        if (userInput3 == 1) {
-                            System.out.print("Enter Book ID : ");
-                            int bookId = inputscanner.nextInt();
-                            inputscanner.nextLine();
-                            book.checkIn(book);
-                            System.out.println("\nThank you for returning the book!");
-                            break;
+                    if (userInput3 == 1) {
+                        System.out.print("Enter Book ID : ");
+                        int bookId = inputscanner.nextInt();
+                        inputscanner.nextLine();
+                        for (Book book : libraryInventory) {
+                            if (bookId == book.getID(book) && book.isCheckedOut) {
+                                book.checkIn(book);
+                                System.out.println("\nThank you for returning the book!");
+                                break;
+                            }
                         }
                     }
-
+                    break;
                 case 3:
                     System.out.println("\nGood Bye!");
                     isRunning = false;

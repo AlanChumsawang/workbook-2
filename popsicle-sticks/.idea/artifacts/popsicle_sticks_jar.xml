@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="popsicle-sticks:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/popsicle_sticks_jar</output-path>
+    <root id="archive" name="popsicle-sticks.jar">
+      <element id="module-output" name="popsicle-sticks" />
+    </root>
+  </artifact>
+</component>
